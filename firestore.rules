@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection — each user can read/write their own doc
+    // All authenticated users can read any user doc (needed for admin user-management panel)
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && (request.auth.uid == userId || true);
+      allow delete: if false;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+# Node
+node_modules/
+frontend/out/
+frontend/.next/
+frontend/build/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+*.egg-info/
+.pytest_cache/
+
+# General
+.DS_Store
+.env.local
+.env.development
+.env.test
+.env.production
